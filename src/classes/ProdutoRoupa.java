@@ -1,14 +1,22 @@
 package classes;
 
-public class ProdutoRoupa extends Produto{
+import interfaces.Metodos;
+
+public class ProdutoRoupa extends Produto implements Metodos {
     protected String tamanho;
 
     public ProdutoRoupa() {
+        super();
     }
 
-    public ProdutoRoupa(String nome, Float preco, String marca, String tamanho) {
-        super(nome, preco, marca);
+    public ProdutoRoupa(String nome, Float preco, String marca, Integer taxaDesconto, String tamanho) {
+        super();
         this.tamanho = tamanho;
+    }
+
+    @Override
+    public Float calcularDesconto() {
+        return (preco - (preco * (taxaDesconto/100f)));
     }
 
     public String getTamanho() {

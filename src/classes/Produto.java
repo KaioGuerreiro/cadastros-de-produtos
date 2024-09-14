@@ -4,17 +4,16 @@ public class Produto {
     protected String nome;
     protected Float preco;
     protected String marca;
+    protected Integer taxaDesconto;
+
     public Produto() {
     }
 
-    public Produto(String nome, Float preco, String marca) {
+    public Produto(String nome, Float preco, String marca, Integer taxaDesconto) {
         this.nome = nome;
         this.preco = preco;
         this.marca = marca;
-    }
-
-    public Float calcularDesconto(Integer taxa) {
-        return preco - preco * (taxa/100);
+        this.taxaDesconto = taxaDesconto;
     }
 
     public String getNome() {
@@ -39,5 +38,13 @@ public class Produto {
 
     public void setMarca(String marca) {
         this.marca = marca;
+    }
+
+    public Integer getTaxaDesconto() {
+        return taxaDesconto;
+    }
+
+    public void setTaxaDesconto(Integer taxaDesconto) {
+        this.taxaDesconto = taxaDesconto;
     }
 }

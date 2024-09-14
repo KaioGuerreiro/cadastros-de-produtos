@@ -6,11 +6,17 @@ public class ProdutoEletronico extends Produto implements Metodos{
     protected String especificacao;
 
     public ProdutoEletronico() {
+        super();
     }
 
-    public ProdutoEletronico(String nome, Float preco, String marca, String especificacao) {
-        super(nome, preco, marca);
+    public ProdutoEletronico(String nome, Float preco, String marca, Integer taxaDesconto, String especificacao) {
+        super();
         this.especificacao = especificacao;
+    }
+
+    @Override
+    public Float calcularDesconto() {
+        return (getPreco() - (getPreco() * (getTaxaDesconto()/100f)));
     }
 
     public String getEspecificacao() {
